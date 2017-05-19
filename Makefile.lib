@@ -1,0 +1,24 @@
+TO = $(PREFIX)/usr/lib/
+
+TARGET        = libwinstarlcd.a
+SOURCES       = winstar_lcd.cpp
+OBJECTS       = winstar_lcd.o
+INCPATH       = -I . -I include
+
+all: Makefile $(TARGET)
+
+$(TARGET):  $(OBJECTS) $(OBJCOMP)
+	-$(DEL_FILE) $(TARGET)
+	$(AR) $(TARGET) $(OBJECTS)
+
+clean:
+	rm -f $(OBJECTS) $(TARGET)
+
+install:
+	install -d $(TO)
+	install $(TARGET) $(TO)
+
+.SUFFIXES: .o .c .cpp .cc .cxx .C
+
+.cpp.o:
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o "$@" "$<"
