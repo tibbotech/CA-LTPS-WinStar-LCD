@@ -1,1 +1,28 @@
 This is README file for LCD project
+
+1. Hardware configuration
+    
+    To run this project you will need:
+    
+    - LTPS3
+    - Tibbit #00-3 (Two direct I/O lines, +5VDC and GND)
+    - Tibbit #41 (8-bit port extender + 200mm cable)
+    - Any WinStar-compatible LCD display
+    
+    Cable soldering scheme:
+    
+    cable pin           WinStar LCD pin
+    1 GND               1
+    2 +5VDC             2
+    3 LSB bit 0         4
+    4 bit 1             5
+    5 bit 2             6
+    6 bit 3             11
+    7 bit 4             12
+    8 bit 5             13
+    9 bit 6             14
+   10 MSB bit 7         unused
+   
+   Also you should connect LCD pins: 1 and 16, 2 and 15 and install variable
+   resistor between pin 3 and 1 (LCD contrast regulation)
+   
