@@ -23,6 +23,6 @@ This is README file for LCD project
     9 bit 6             14
    10 MSB bit 7         unused
    
-   Also you should connect LCD pins: 1 and 16, 2 and 15 and install variable
-   resistor between pin 3 and 1 (LCD contrast regulation)
+   Also,  LCD pin pairs: 1 & 16 and 2 & 15 should be connected together.   
+   A potentiometer should be installed between pin 3 and 1 for LCD contrast regulation (we used 10KOhm).
    
