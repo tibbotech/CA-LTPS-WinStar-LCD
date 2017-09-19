@@ -1,0 +1,16 @@
+# RusElProm LCD startup script for Systemd
+# by Dmitry Dvorkin <dvorkin@tibbo.com>
+
+[Unit]
+Description=RLP LCD
+After=syslog.target
+
+[Service]
+Type=simple
+Restart=on-failure
+
+ExecStart=/opt/lcdsrv/LCD -c /opt/lcdsrv/lcdsrv.conf
+ExecReload=/bin/kill -HUP $MAINPID
+
+[Install]
+WantedBy=multi-user.target
